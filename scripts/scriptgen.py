@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 def generate_script(prompt):
     api_url = "http://localhost:5000/api/generate"
@@ -21,20 +22,17 @@ def generate_script(prompt):
     print("Response status code:", response.status_code)
 
     if response.status_code == 200:
-        script_parts = []
         for line in response.iter_lines():
             if line:
                 decoded_line = line.decode('utf-8')
                 try:
                     json_line = json.loads(decoded_line)
-                    script_parts.append(json_line['response'])
+                    yield json_line['response']
                 except json.JSONDecodeError as e:
                     print(f"Error decoding JSON: {e}")
-        script = ''.join(script_parts)
-        return script
+                time.sleep(0.05)
     else:
-        print(f"Failed to generate script: {response.status_code} - {response.text}")
-        return None
+        yield f"Failed to generate script: {response.status_code} - {response.text}"
 
 if __name__ == "__main__":
     prompt = "Create a script about the top 5 parks in Los Angeles."
