@@ -6,13 +6,13 @@ The first iteration of the MVP should run 100% locally using your own device to 
 - Python 3
   - [Download Python 3](https://www.python.org/downloads/)
 - Ollama
-- Tacotron 2 + WaveGlow
+- Mozilla TTS
 - Open CV
 - FFmpeg
 
 ## MVP Plan
 - Generate Script using Ollama
-- Generate Audio Recording using Tacotron/WaveGlow
+- Generate Audio Recording using Mozilla TTS
 - Generate Background Gameplay/B roll using Open CV
 - Render the audio over the background gameplay using FFmpeg
 - Save file locally

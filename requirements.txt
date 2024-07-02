@@ -1,5 +1,9 @@
-1. Download Ollama
-- pip install ollama
+----------------------------------------
+----------------- Setup ----------------
+----------------------------------------
+
+1. Download all Python Dependencies
+- pip install ollama TTS requests
 
 2. Download the model (llama3)
 - ollama pull llama3
@@ -8,16 +12,15 @@
 export OLLAMA_HOST="127.0.0.1:5000"
 export OLLAMA_MODELS="$HOME/.ollama/models"
 
-4. Install Mozilla TTS for audio gen
-- pip install TTS
-
 ----------------------------------------
 --------- Running The Program ----------
 ----------------------------------------
 
-1. Run the api in a terminal with "ollama serve"
+1. Run the API in a terminal with
+- ollama serve
 
 
-2. Enter your prompt
+2. Run the program with python3 main.py
 
-3.
+3. Listen to the voice recording with
+- aplay output.wav
