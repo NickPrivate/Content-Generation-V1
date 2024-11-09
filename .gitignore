@@ -1,6 +1,7 @@
 gameplay.mp4
 output.wav
 final_output.mp4
+env/
 
 *.mp4
 *.wav
