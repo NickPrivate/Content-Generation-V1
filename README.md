@@ -1,21 +1,69 @@
-## Introduction
-This is my first attempt/MVP creating an AI content generation system that turns a simple user prompt into a short form video that can be uploaded to social media platforms or to friends just for fun.
-The first iteration of the MVP should run 100% locally using your own device to generate whatever you desire.
+# Introduction
+This Content Generation System is the Final Project for CPSC 254  Software Development with Open Source Systems.
+The project is inspired by the recent viral trend on short form social media platforms known as "brain rot" in which AI generated audio is played over background gameplay (typically Minecraft parkour).
+This project aims to allow users to interact with an open-source LLM model, open-source TTS model, and open-source Rendering platform to create any kind of video you desire.
 
-## Requirements
-- Python 3
-  - [Download Python 3](https://www.python.org/downloads/)
+
+# Requirements
+- Python 3.12 or greater
+- Ubuntu/Debian/MacOS with apt
+
+# Environment Setup & Installation
+To setup this project, ensure that your computer matches the requirements and follow the steps to create the environment and run the program
+
+## Step 1: Install git:
+```
+sudo apt install git
+```
+## Step 2: Clone the repository
+```
+git clone git@github.com/NickPrivate/Content-Generation-V1.git;
+cd Content-Generation-V1
+```
+
+## Step 3: Create & Activate the Virtual Environment:
+```
+python3 -m venv env
+source env/bin/activate
+```
+
+## Step 4: Install Required Packages:
+```
+pip install -r requirements.txt
+```
+
+## Step 5: Run the script to download the ML model and setup env variables:
+```
+chmod +x setup_script.sh
+./setup_script.sh
+```
+
+## Step 6: Place your desired background video in the project's root folder and rename it to gameplay.mp4
+
+## Step 7: Run the program with Python:
+```
+python3 main.py
+```
+
+## Step 8: View the results with a media player (e.g., VLC):
+```
+sudo apt install VLC
+vlc final_result.mp4
+```
+Note: Ensure that you are using the second audio track to hear the TTS
+
+## Step 9: Deactivate the Virtual Environment:
+```
+deactivate
+```
+
+
+## Technologies used
+- Python3
 - Ollama
-- Mozilla TTS
-- Open CV
-- FFmpeg
+- Coqui TTS
+- FFmpeg-python
 
-## MVP Plan
-- Generate Script using Ollama
-- Generate Audio Recording using Mozilla TTS
-- Generate Background Gameplay/B roll using Open CV
-- Render the audio over the background gameplay using FFmpeg
-- Save file locally
 
 ## Future of the Project
 - Possibly turn it into a monetized webapp?
