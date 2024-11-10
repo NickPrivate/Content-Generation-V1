@@ -40,19 +40,24 @@ chmod +x setup_script.sh
 
 ## Step 6: Place your desired background video in the project's root folder and rename it to gameplay.mp4
 
-## Step 7: Run the program with Python:
+## Step 7: Run the local API - In a new terminal enter:
+```
+ollama serve
+```
+
+## Step 8: Run the program with Python:
 ```
 python3 main.py
 ```
 
-## Step 8: View the results with a media player (e.g., VLC):
+## Step 9: View the results with a media player (e.g., VLC):
 ```
 sudo apt install VLC
 vlc final_result.mp4
 ```
 Note: Ensure that you are using the second audio track to hear the TTS
 
-## Step 9: Deactivate the Virtual Environment:
+## Step 10: Deactivate the Virtual Environment:
 ```
 deactivate
 ```
