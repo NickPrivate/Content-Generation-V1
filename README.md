@@ -74,3 +74,4 @@ deactivate
 - Possibly turn it into a monetized webapp?
 - FastAPI/React/Supabase?
 - Could be something cool, stay tuned :)
+
