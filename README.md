@@ -34,6 +34,11 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
+## Step 5: Install Ollama LLM
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
 ## Step 5: Run the script to download the ML model and setup env variables:
 ```
 chmod +x setup_script.sh
@@ -44,7 +49,7 @@ chmod +x setup_script.sh
 
 ## Step 7: Run the local API - In a new terminal enter:
 ```
-ollama serve
+ollama run llama3.2
 ```
 
 ## Step 8: Run the program with Python:
