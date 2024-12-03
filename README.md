@@ -17,15 +17,17 @@ sudo apt install git
 ```
 ## Step 2: Clone the repository
 ```
-git clone https://github.com/NickPrivate/Content-Generation-V1.git;
+git clone https://github.com/NickPrivate/Content-Generation-V1.git
 cd Content-Generation-V1
 ```
 
-## Step 3: Create & Activate the Virtual Environment:
+## Step 3: Install & Create & Activate the Virtual Environment:
 ```
+sudo apt install python3.12-venv
 python3 -m venv env
 source env/bin/activate
 ```
+
 
 ## Step 4: Install Required Packages:
 ```
