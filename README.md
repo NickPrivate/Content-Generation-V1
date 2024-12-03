@@ -13,7 +13,7 @@ To setup this project, ensure that your computer matches the requirements and fo
 
 ## Step 1: Install git:
 ```
-sudo apt update && sudo apt install -y git python3.12-venv vlc
+sudo apt update && sudo apt install -y git python3.12-venv vlc espeak-ng ffmpeg
 ```
 ## Step 2: Clone the repository
 ```
