@@ -17,7 +17,7 @@ sudo apt install git
 ```
 ## Step 2: Clone the repository
 ```
-git clone git@github.com/NickPrivate/Content-Generation-V1.git;
+git clone https://github.com/NickPrivate/Content-Generation-V1.git;
 cd Content-Generation-V1
 ```
 
