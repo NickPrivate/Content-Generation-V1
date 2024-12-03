@@ -13,7 +13,7 @@ To setup this project, ensure that your computer matches the requirements and fo
 
 ## Step 1: Install git:
 ```
-sudo apt install git
+sudo apt update && sudo apt install -y git python3.12-venv vlc
 ```
 ## Step 2: Clone the repository
 ```
@@ -23,7 +23,6 @@ cd Content-Generation-V1
 
 ## Step 3: Install & Create & Activate the Virtual Environment:
 ```
-sudo apt install python3.12-venv
 python3 -m venv env
 source env/bin/activate
 ```
@@ -59,7 +58,6 @@ python3 main.py
 
 ## Step 9: View the results with a media player (e.g., VLC):
 ```
-sudo apt install VLC
 vlc final_result.mp4
 ```
 Note: Ensure that you are using the second audio track to hear the TTS
