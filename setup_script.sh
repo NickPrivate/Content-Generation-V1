@@ -9,7 +9,7 @@ else
 fi
 
 echo "Downloading the Llama3 model..."
-if ollama pull llama3; then
+if ollama pull llama3.2; then
     echo "Successfully downloaded the Llama3 model."
 else
     echo "Error: Failed to download the Llama3 model. Please check your internet connection or 'ollama' configuration."
