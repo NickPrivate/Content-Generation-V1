@@ -32,7 +32,7 @@ cd Content-Generation-V1
 ## Step 4: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
 ```
 chmod +x setup_script.sh
-sudo ./setup_script.sh
+./setup_script.sh
 ```
 
 
@@ -68,6 +68,7 @@ deactivate
 
 ## Technologies used
 - Python3
+- Pytorch
 - Ollama
 - llama3.2
 - Coqui TTS
