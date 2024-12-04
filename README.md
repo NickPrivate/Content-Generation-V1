@@ -11,9 +11,9 @@ This project aims to allow users to interact with an open-source LLM model, open
 # Environment Setup & Installation
 To setup this project, ensure that your computer matches the requirements and follow the steps to create the environment and run the program
 
-## Step 1: Install git:
+## Step 1: Update packages and Install git:
 ```
-sudo apt update && sudo apt install -y git python3.12-venv vlc espeak-ng ffmpeg
+sudo apt update && sudo apt install -y git
 ```
 ## Step 2: Clone the repository
 ```
@@ -27,42 +27,40 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-
-## Step 4: Install Required Packages:
-```
-pip install -r requirements.txt
-```
-
-## Step 5: Install Ollama LLM
-```
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-## Step 5: Run the script to download the ML model and setup env variables:
+## Step 4: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
 ```
 chmod +x setup_script.sh
-./setup_script.sh
+sudo ./setup_script.sh
 ```
 
-## Step 6: Place your desired background video in the project's root folder and rename it to gameplay.mp4
+## Step 5: Include your background gameplay (.mp4 file)
+-  Place your gameplay inside of the project's root folder and rename it to "gameplay.mp4"
 
-## Step 7: Run the local API - In a new terminal enter:
+
+# Running The Program
+
+## Step 0: Ensure you are using the Python virtual environment
 ```
-ollama run llama3.2
+source env/bin/activate
 ```
 
-## Step 8: Run the program with Python:
+## Step 1: Create a new terminal, Run the Ollama API:
+```
+ollama serve
+```
+
+## Step 2: In the original terminal, Run the program with Python:
 ```
 python3 main.py
 ```
 
-## Step 9: View the results with a media player (e.g., VLC):
+## Step 3: View the results with a media player (e.g., VLC):
 ```
 vlc final_result.mp4
 ```
 Note: Ensure that you are using the second audio track to hear the TTS
 
-## Step 10: Deactivate the Virtual Environment:
+## Step 4: Deactivate the Virtual Environment:
 ```
 deactivate
 ```
@@ -71,12 +69,8 @@ deactivate
 ## Technologies used
 - Python3
 - Ollama
+- llama3.2
 - Coqui TTS
-- FFmpeg-python
-
-
-## Future of the Project
-- Possibly turn it into a monetized webapp?
-- FastAPI/React/Supabase?
-- Could be something cool, stay tuned :)
+- FFmpeg
+- espeak-ng
 
