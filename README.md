@@ -26,16 +26,10 @@ git clone https://github.com/NickPrivate/Content-Generation-V1.git
 cd Content-Generation-V1
 ```
 
-## Step 3: Install & Create & Activate the Virtual Environment:
-```
-python3 -m venv env
-source env/bin/activate
-```
-
-## Step 4: Include your background gameplay (.mp4 file)
+## Step 3: Include your background gameplay (.mp4 file)
 -  Place your gameplay inside of the project's root folder and rename it to "gameplay.mp4"
   
-## Step 5: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
+## Step 4: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
 ```
 chmod +x setup_script.sh
 sudo ./setup_script.sh
@@ -44,28 +38,29 @@ sudo ./setup_script.sh
 
 # Running The Program
 
-## Step 0: Ensure you are using the Python virtual environment
+## Step 1: Install & Create & Activate the Virtual Environment:
 ```
+python3 -m venv env
 source env/bin/activate
 ```
 
-## Step 1: Create a new terminal, Run the Ollama API:
+## Step 2: Open a new terminal, Run the Ollama API:
 ```
 ollama serve
 ```
 
-## Step 2: In the original terminal, Run the program with Python:
+## Step 3: In the original terminal, Run the program with Python:
 ```
 python3 main.py
 ```
 
-## Step 3: View the results with a media player (e.g., VLC):
+## Step 4: View the results with a media player (e.g., VLC):
 ```
 vlc final_result.mp4
 ```
 Note: Ensure that you are using the second audio track to hear the TTS
 
-## Step 4: Deactivate the Virtual Environment:
+## Step 5: Deactivate the Virtual Environment:
 ```
 deactivate
 ```
