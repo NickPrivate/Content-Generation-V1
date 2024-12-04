@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script with sudo or as root: sudo ./setup_script.sh"
-    exit 1
-fi
-
 echo "Installing required packages: python3.12-venv, vlc, espeak-ng, ffmpeg..."
 sudo apt update
 sudo apt install -y python3.12-venv vlc espeak-ng ffmpeg curl
@@ -61,15 +56,6 @@ if ! ollama pull llama3.2; then
     exit 1
 fi
 
-echo "Setting up environment variables..."
-export OLLAMA_HOST="127.0.0.1:5000"
-export OLLAMA_MODELS="$HOME/.ollama/models"
-
-if ! grep -q "OLLAMA_HOST" "$HOME/.bashrc"; then
-    echo 'export OLLAMA_HOST="127.0.0.1:5000"' >> "$HOME/.bashrc"
-    echo 'export OLLAMA_MODELS="$HOME/.ollama/models"' >> "$HOME/.bashrc"
-    echo "Environment variables added to .bashrc."
-fi
 
 echo "Validating and fixing the MP4 container..."
 if [ -f "gameplay.mp4" ]; then
@@ -88,6 +74,19 @@ else
     exit 1
 fi
 
+echo "Setting up environment variables..."
+export OLLAMA_HOST="127.0.0.1:5000"
+export OLLAMA_MODELS="$HOME/.ollama/models"
 
+if ! grep -q "OLLAMA_HOST" "$HOME/.bashrc"; then
+    echo 'export OLLAMA_HOST="127.0.0.1:5000"' >> "$HOME/.bashrc"
+    echo 'export OLLAMA_MODELS="$HOME/.ollama/models"' >> "$HOME/.bashrc"
+    echo "Environment variables added to .bashrc."
+fi
+
+source ~/.bashrc
+
+echo "Environment variables are set:"
+printenv | grep OLLAMA
 
 echo "Setup complete!"
