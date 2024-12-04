@@ -4,6 +4,13 @@ echo "Installing required packages: python3.12-venv, vlc, espeak-ng, ffmpeg..."
 sudo apt update
 sudo apt install -y python3.12-venv vlc espeak-ng ffmpeg curl
 
+echo "Creating Python Environment"
+python3 -m venv env
+source env/bin/activate
+
+echo "Installing Dependencies"
+pip install -r requirements.txt
+
 if [ $? -ne 0 ]; then
     echo "Error: Failed to install required packages. Please check your network connection or package manager configuration."
     exit 1

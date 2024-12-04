@@ -38,7 +38,7 @@ chmod +x setup_script.sh
 
 # Running The Program
 
-## Step 1: Install & Create & Activate the Virtual Environment:
+## Step 1: Create & Activate the Virtual Environment:
 ```
 python3 -m venv env
 source env/bin/activate

@@ -1,3 +1,4 @@
+import subprocess
 import threading
 
 import torch
@@ -52,7 +53,12 @@ def main():
 
     render_vid()
     print("\nVideo Successfully rendered")
-    print("\nUse vlc final_video.mp4 to view")
+    print("\nUse vlc final_output.mp4 to view")
+
+    try:
+        subprocess.run(["vlc", "final_output.mp4"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to open VLC: {e}")
 
 
 if __name__ == "__main__":
