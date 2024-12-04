@@ -7,7 +7,7 @@ fi
 
 echo "Installing required packages: python3.12-venv, vlc, espeak-ng, ffmpeg..."
 sudo apt update
-sudo apt install -y python3.12-venv vlc espeak-ng ffmpeg
+sudo apt install -y python3.12-venv vlc espeak-ng ffmpeg curl
 
 if [ $? -ne 0 ]; then
     echo "Error: Failed to install required packages. Please check your network connection or package manager configuration."
@@ -73,17 +73,21 @@ fi
 
 echo "Validating and fixing the MP4 container..."
 if [ -f "gameplay.mp4" ]; then
-    ffmpeg -i gameplay.mp4 -c copy -y gameplay.mp4
+    temp_file="temp_gameplay.mp4"
+    ffmpeg -i gameplay.mp4 -c copy -y "$temp_file"
     if [ $? -eq 0 ]; then
+        mv "$temp_file" gameplay.mp4
         echo "MP4 container validated and fixed successfully."
     else
         echo "Error: Failed to validate/fix the MP4 container. Exiting."
+        rm -f "$temp_file"
         exit 1
     fi
 else
     echo "Error: gameplay.mp4 file not found. Please provide a valid MP4 file, refer to the previous step."
     exit 1
 fi
+
 
 
 echo "Setup complete!"
