@@ -1,15 +1,20 @@
 # Introduction
 This Content Generation System is the Final Project for CPSC 254  Software Development with Open Source Systems.
-The project is inspired by the recent viral trend on short form social media platforms known as "brain rot" in which AI generated audio is played over background gameplay (typically Minecraft parkour).
-This project aims to allow users to interact with an open-source LLM model, open-source TTS model, and open-source Rendering platform to create any kind of video you desire.
+The project is inspired by the recent viral trend and Oxford's word of the year, "brain rot". The most common kind of brain rot includes AI generated audio played over background gameplay (typically Minecraft parkour).
+This project aims to allow users to create their OWN brainrot by using open-source LLM models, open-source TTS models, and an open-source Rendering platform to create any kind of video you desire.
 
 
-# Requirements
+## Requirements
 - Python 3.12 or greater
 - Ubuntu/Debian/MacOS with apt
+- Your background gameplay (must be .mp4 format & named gameplay.mp4)
+- Willing to follow all of the steps
 
-# Environment Setup & Installation
-To setup this project, ensure that your computer matches the requirements and follow the steps to create the environment and run the program
+
+## Environment Setup & Installation
+To setup this project, ensure that your computer meets the requirements and follow the steps to create the environment and run the program
+
+# Create the Environment
 
 ## Step 1: Update packages and Install git:
 ```
@@ -27,14 +32,14 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-## Step 4: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
+## Step 4: Include your background gameplay (.mp4 file)
+-  Place your gameplay inside of the project's root folder and rename it to "gameplay.mp4"
+  
+## Step 5: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
 ```
 chmod +x setup_script.sh
 sudo ./setup_script.sh
 ```
-
-## Step 5: Include your background gameplay (.mp4 file)
--  Place your gameplay inside of the project's root folder and rename it to "gameplay.mp4"
 
 
 # Running The Program
