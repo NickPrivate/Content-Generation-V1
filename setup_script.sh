@@ -71,4 +71,19 @@ if ! grep -q "OLLAMA_HOST" "$HOME/.bashrc"; then
     echo "Environment variables added to .bashrc."
 fi
 
+echo "Validating and fixing the MP4 container..."
+if [ -f "gameplay.mp4" ]; then
+    ffmpeg -i gameplay.mp4 -c copy -y gameplay.mp4
+    if [ $? -eq 0 ]; then
+        echo "MP4 container validated and fixed successfully."
+    else
+        echo "Error: Failed to validate/fix the MP4 container. Exiting."
+        exit 1
+    fi
+else
+    echo "Error: gameplay.mp4 file not found. Please provide a valid MP4 file, refer to the previous step."
+    exit 1
+fi
+
+
 echo "Setup complete!"
