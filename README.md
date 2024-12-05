@@ -42,6 +42,7 @@ chmod +x setup_script.sh
 ```
 python3 -m venv env
 source env/bin/activate
+pip install -r requirements.txt
 ```
 
 ## Step 2: Open a new terminal, Run the Ollama API:
@@ -51,7 +52,7 @@ ollama serve
 
 ## Step 3: In the original terminal, Run the program with Python:
 ```
-python3 main.py
+python3 gui.py
 ```
 
 ## Step 4: View the results with a media player (e.g., VLC):
@@ -69,6 +70,7 @@ deactivate
 ## Technologies used
 - Python3
 - Pytorch
+- Pyside6
 - Ollama
 - llama3.2
 - Coqui TTS
