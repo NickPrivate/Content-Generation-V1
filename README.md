@@ -28,6 +28,7 @@ cd Content-Generation-V1
 
 ## Step 3: Include your background gameplay (.mp4 file)
 -  Place your gameplay inside of the project's root folder and rename it to "gameplay.mp4"
+-  We recommend using a Youtube to MP4 Platform like: https://cnvmp3.com/
   
 ## Step 4: Run the Setup Script to Download the ML Model/Requirements/Env Variables:
 ```
@@ -35,6 +36,11 @@ chmod +x setup_script.sh
 ./setup_script.sh
 ```
 
+## Step 5: Source bash, and download the LLM: 
+```
+. ~/.bashrc
+ollama pull llama3.2
+```
 
 # Running The Program
 
