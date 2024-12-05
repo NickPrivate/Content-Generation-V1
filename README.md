@@ -6,7 +6,8 @@ This project aims to allow users to create their OWN brainrot by using open-sour
 
 ## Requirements
 - Python 3.12 or greater
-- Ubuntu/Debian/MacOS with apt
+- ~20gb of storage space
+- Ubuntu/Debian/MacOS with apt. We highly recommend [Ubuntu 24.04.1 LTS ](https://ubuntu.com/download/desktop)
 - Your background gameplay (must be .mp4 format & named gameplay.mp4)
 - Willing to follow all of the steps
 
@@ -75,11 +76,10 @@ deactivate
 
 ## Technologies used
 - Python3
-- Pytorch
 - Pyside6
 - Ollama
 - llama3.2
 - Coqui TTS
 - FFmpeg
 - espeak-ng
-
+- VLC
