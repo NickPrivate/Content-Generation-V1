@@ -40,22 +40,6 @@ else
     exit 1
 fi
 
-echo "Downloading the llama3.2 model..."
-for i in {1..3}; do
-    if ollama pull llama3.2; then
-        echo "Successfully downloaded the llama3.2 model."
-        break
-    else
-        echo "Attempt $i: Failed to download the llama3 model. Retrying..."
-        sleep 5
-    fi
-done
-
-if ! ollama pull llama3.2; then
-    echo "Error: Failed to download the llama3 model after multiple attempts."
-    exit 1
-fi
-
 
 echo "Validating and fixing the MP4 container..."
 if [ -f "gameplay.mp4" ]; then
@@ -70,7 +54,7 @@ if [ -f "gameplay.mp4" ]; then
         exit 1
     fi
 else
-    echo "Error: gameplay.mp4 file not found. Please provide a valid MP4 file, refer to the previous step."
+    echo "Error: gameplay.mp4 file not found. Please provide a valid MP4 file, refer to the previous step, then run this script again."
     exit 1
 fi
 
