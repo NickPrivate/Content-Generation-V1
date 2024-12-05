@@ -1,4 +1,3 @@
-import subprocess
 import threading
 
 import torch
@@ -7,7 +6,7 @@ from scripts.audiogen import generate_audio
 from scripts.render import render_vid
 from scripts.scriptgen import generate_script
 
-print("Initializing Modlels...")
+print("Initializing Models...")
 from TTS.api import TTS
 
 
@@ -19,14 +18,12 @@ def print_stream(generator):
     return "".join(script)
 
 
-def main():
+def main(word_count, prompt):
     device_type = "cuda" if torch.cuda.is_available() else "cpu"
     if device_type == "cuda":
         print("GPU Detected, GPU Will be utilized for Faster Rendering")
     else:
         print("No GPU Detected, Opting for CPU Rendering")
-    word_count = input("Enter word count: ")
-    prompt = input("Enter prompt: ")
     our_prompt = f"{prompt} in {word_count} words"
     response_generator = generate_script(our_prompt)
 
@@ -54,12 +51,3 @@ def main():
     render_vid()
     print("\nVideo Successfully rendered")
     print("\nUse vlc final_output.mp4 to view")
-
-    try:
-        subprocess.run(["vlc", "final_output.mp4"], check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to open VLC: {e}")
-
-
-if __name__ == "__main__":
-    main()
