@@ -9,7 +9,8 @@ This project aims to allow users to create their OWN brainrot by using open-sour
 - ~20gb of storage space
 - Ubuntu/Debian/MacOS with apt. We highly recommend [Ubuntu 24.04.1 LTS ](https://ubuntu.com/download/desktop)
 - Your background gameplay (must be .mp4 format & named gameplay.mp4)
-- Willing to follow all of the steps
+- Recommend following the stps as a user account in Linux (not as root/sudo)
+- Be Willing to follow all of the steps
 
 
 ## Environment Setup & Installation
@@ -73,6 +74,14 @@ Note: Ensure that you are using the second audio track to hear the TTS
 deactivate
 ```
 
+## Troubleshooting:
+- First ensure you meet the requirements: Python 3.12+, 20gb+ of storage, your own mp4 file
+- If you are having errors with running the python file, follow these troubleshooting steps:
+- Close all terminals, open 2 new terminals and ensure that the model is donloaded
+- Do this by running the server with "ollama serve" and then in another terminal use "ollama list"
+- If you do not see the model there, enter the command "ollama pull llama3.2"
+- Now you should try to run the proram again, make sure to cd to the projects root directory
+- Then "srouce env/bin/activate" now try running the program with "python3 gui.py"
 
 ## Technologies used
 - Python3
